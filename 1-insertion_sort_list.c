@@ -25,7 +25,7 @@ static void swap_with_prev(listint_t **list, listint_t *node)
 	if (prev->prev)
 		prev->prev->next = node;
 	else
-		*list = node /*node becomes new head*/
+		*list = node; /*node becomes new head*/
 	prev->prev = node;
 }
 /**
@@ -49,7 +49,7 @@ void insertion_sort_list(listint_t **list)
 		/*swap the current node backward to its correct position*/
 		while (node->prev && node->n < node->prev->n)
 		{
-			sawp_with_prev(list, node);
+			swap_with_prev(list, node);
 			print_list(*list);
 		}
 	}
